@@ -1,0 +1,132 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    font-size: 18px;
+    color: #444;
+    text-align: center;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+    background-color: #f2f2f2;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0.5, 0.5, 0.5, 0.7);
+}
+
+textarea {
+    height: 150px;
+}
+
+button[type="submit"] {
+    background-color: #6dabe4;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: #5d96c5;
+}
+
+@media screen and (max-width: 800px) {
+    form {
+        padding: 20px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    input,
+    textarea {
+        font-size: 14px;
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
+    }
+}
+
+input[type="checkbox"] {
+    margin-top: 5px;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked:before {
+    content: "";
+    display: block;
+    text-align: center;
+    background-color: #6dabe4;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 5px auto;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+    background-color: #f2f2f2;
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@media screen and (max-width: 800px) {
+    input[type="number"] {
+        font-size: 14px;
+    }
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+    background-color: #f2f2f2;
+}
