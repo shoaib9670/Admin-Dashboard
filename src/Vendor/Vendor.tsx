@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import './Vendor.css'
+import './Vendor.css';
+import { useNavigate } from "react-router-dom";
 import { UploadVendor, getLocality, handleImageUpload } from "../Services/vendorDashServices";
 import { StoreModel } from "../Model/StoreModel";
 import { getCategories, getSubCat, setCateId } from "../Services/GetCategoryServices";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MyForm = () => {
 
@@ -74,6 +77,7 @@ const MyForm = () => {
     ]);
     const [userId, setUserId] = useState<string>('')
     const [uniqueId, setUniqueId] = useState<string>('')
+    const navigate = useNavigate();
 
     const vendorData: StoreModel = {
         categoryName: categoryName,
@@ -82,6 +86,7 @@ const MyForm = () => {
         city: city,
         discount: discount,
         featured: featured,
+        isCoinVendor: isCoinV,
         images: images,
         locality: locality,
         location: location,
@@ -114,6 +119,10 @@ const MyForm = () => {
         e.preventDefault();
         UploadVendor(vendorData)
         console.log(vendorData);
+        notify()
+        setTimeout(() => {
+            window.location.reload()
+        }, 3000)
 
         // handle form submission here
     };
@@ -236,6 +245,8 @@ const MyForm = () => {
             setCategoryId(res)
         })
     }, [categoryName])
+
+    const notify = () => toast("Wow so easy!");
 
     return (
         <form >
@@ -585,6 +596,7 @@ const MyForm = () => {
 
             </div>
             <button onClick={handleSubmit} type="submit">Submit</button>
+            <ToastContainer />
         </form>
     );
 }
